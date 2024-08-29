@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage du nom de l'utilisateur</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 10px;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            width: 80%;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Entrez votre nom</h2>
+    <input type="text" id="nameInput" placeholder="Entrez votre nom ici">
+    <button onclick="displayName()">Afficher le nom</button>
+    <p id="displayArea"></p>
+</div>
+
+<script>
+    function displayName() {
+        var name = document.getElementById("nameInput").value;
+        document.getElementById("displayArea").innerText = "Bonjour, " + name + "!";
+    }
+</script>
+
+</body>
+</html>
