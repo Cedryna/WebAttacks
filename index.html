@@ -69,9 +69,11 @@
     <p id="displayArea"></p>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.2.6/purify.min.js"></script>
 <script>
     function displayName() {
         var name = document.getElementById("nameInput").value;
+        var cleanName = DOMPurify.sanitize(name);  // Nettoyer la saisie utilisateur
         document.getElementById("displayArea").innerText = "Bonjour, " + name + "!";
     }
 </script>
