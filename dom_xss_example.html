@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM XSS Example</title>
+</head>
+<body>
+    <h2>Entrez votre nom dans l'URL</h2>
+    <p id="output"></p>
+
+    <script>
+        // Script vulnérable au DOM XSS
+        var name = new URLSearchParams(window.location.search).get('name');
+        if (name) {
+            document.getElementById('output').innerHTML = "Bonjour, " + name + "!";
+        }
+    </script>
+</body>
+</html>
